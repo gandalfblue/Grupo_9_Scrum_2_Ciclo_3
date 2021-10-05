@@ -1,0 +1,229 @@
+
+#body_index{
+	background: url('https://cdn.pixabay.com/photo/2014/04/03/10/00/shopping-cart-309592_960_720.png');
+	background-size: contain;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+}
+
+body{
+	 font-family: Arial, Helvetica, sans-serif;
+	 margin: 0;	
+	 background: url('https://cdn.pixabay.com/photo/2018/04/22/12/03/world-3340864_960_720.jpg') no-repeat center center fixed; 
+	 background-size: cover;
+	 
+}
+
+* {
+    box-sizing: border-top;
+}
+
+.contenedor{
+    width: 100%;
+    padding: 10px;
+}
+
+.formulario{
+    background: #152F8F;
+    margin-top: 150px;
+    padding: 3px;
+}
+
+h1{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 40px;
+}
+input[type="text"],
+input[type="password"]{
+    font-size: 20px;
+    width: 77%;
+    padding: 10px;
+    border: none;
+}
+.input-contenedor{
+    background: white;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+.button{
+    border: none;
+    width: 100%;
+    color: #0004ff;
+    font-size: 20px;
+    background:  #ffe600;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background:#0D8505;
+}
+
+.sinborde{
+  outline: none;
+  border: 0
+}
+
+p{
+    text-align: center;
+    color: white;
+}
+.link{
+    text-decoration: none;
+      color: white;
+    font-weight: 600;
+}
+.link:hover{
+     color: rgb(252, 6, 6);
+}
+
+@media(min-width:768px)
+{
+    .formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 50px;
+        border-radius: 10%;
+    }
+}
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+#icono1{
+min-width: 50px;
+text-align: center;
+color:blue;
+}
+
+#icono2{
+min-width: 50px;
+text-align: center;
+color:blue;
+}
+
+#facebook{
+  background-color: #3b5998;
+}
+
+#facebook:hover{
+  background-color: whitesmoke;
+  color: #3b5998;
+  border-color: gainsboro
+}
+
+#twitter{
+  background-color: #55acee;
+}
+
+#twitter:hover{
+  background-color: whitesmoke;
+  color: #55acee;
+  border-color: gainsboro
+}
+
+#google{
+  background-color: #dd4b39;
+}
+
+#google:hover{
+  background-color: whitesmoke;
+  color: #dd4b39;
+  border-color: gainsboro
+}
+
+#instagram{
+  background-color: #ac2bac;
+}
+
+#instagram:hover{
+  background-color: whitesmoke;
+  color: #ac2bac;
+  border-color: gainsboro
+}
+
+#linkedin{
+  background-color: #0082ca;
+}
+
+#linkedin:hover{
+  background-color: whitesmoke;
+  color: #0082ca;
+  border-color: gainsboro
+}
+
+#github{
+  background-color: #333333;
+}
+
+#github:hover{
+  background-color: whitesmoke;
+  color: #333333;
+  border-color: gainsboro
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  color: white;
+}
+
+.tablax{
+	background-color: white;
+}
+
+#tabla{
+	background-color: rgba(222, 246, 247,0.4);
+	color: black;
+	text-align: center;
+}
+
+#tabla:hover{
+	background-color: rgba(149, 240, 246,0.4);
+	color: black;
+	text-align: center;
+}
+
+h2{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    font-family: fantasy;
+}
+
+#titulo{
+	background-color: rgba(255, 255, 255, 0.4)
+}
+
+#titulo:hover{
+	background-color: rgba(151, 246, 239, 0.4)
+}
+
+a{
+	color: darkgreen;
+}
+
+a:hover{
+	color: black;
+}
+
+#piepagina{
+	background-color: rgba(0, 0, 0, 0.4)
+}
+
+#titulo_2{
+	background-color: rgba(222, 246, 247,0.4);
+	color: rgba(6, 125, 10)
+}
+
+#titulo_3{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    font-family: fantasy;
+}
