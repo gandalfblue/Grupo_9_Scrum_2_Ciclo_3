@@ -29,9 +29,9 @@
 
 </head>
 
-<body id="body_index">
+<body class="index">
 	<!-- Navbar-->
-	<nav class="navbar" id="titulo">
+	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand links" href="index.html"> 
 			<i class="fas fa-shopping-basket"></i> Tienda Generica
@@ -39,11 +39,16 @@
 		</div>
 	</nav>
 	
+			<div class="header">
+			<br>
+			<br>
+				<h1><i class='fas fa-list-ol fa-pulse fa-spin fa-1x'></i> Bienvenido</h1>
+			</div>
+ 
+	
 	<!-- Contenedor de los botones y texto -->
 	<form class="formulario">
-    
-    <h1>Bienvenido</h1>
-    
+
      <div class="contenedor">
      
      	<div class="input-contenedor mb-3">
@@ -71,7 +76,7 @@
 				</button>
 				
 				<p>Aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-         		<p>¿Ya tienes una cuenta?<a class="link" href="loginvista.html"> Registrarse</a></p>
+         		<p>¿Ya tienes una cuenta?<a class="link" href="insertarusuario_login.jsp"> Registrarse</a></p>
 				
 				<div id="error" class="alert alert-danger visually-hidden"
 					role="alert">Usuario o contraseña incorrecta!</div>
@@ -88,7 +93,7 @@
 	      <a
 	        class="btn btn-primary btn-floating m-1"
 	        id="facebook"
-	        href="#!"
+	        href="https://www.facebook.com"
 	        role="button"
 	        ><i class="fab fa-facebook-f"></i
 	      ></a>
@@ -97,7 +102,7 @@
 	      <a
 	        class="btn btn-primary btn-floating m-1"
 	        id="twitter"
-	        href="#!"
+	        href="https://twitter.com"
 	        role="button"
 	        ><i class="fab fa-twitter"></i
 	      ></a>
@@ -106,7 +111,7 @@
 	      <a
 	        class="btn btn-primary btn-floating m-1"
 	        id="google"
-	        href="#!"
+	        href="https://www.google.com.co"
 	        role="button"
 	        ><i class="fab fa-google"></i
 	      ></a>
@@ -115,7 +120,7 @@
 	      <a
 	        class="btn btn-primary btn-floating m-1"
 	        id="instagram"
-	        href="#!"
+	        href="https://github.com"
 	        role="button"
 	        ><i class="fab fa-instagram"></i
 	      ></a>
@@ -142,12 +147,18 @@
 	  <!-- Grid container -->
 	
 	  <!-- Copyright -->	  
-	  <div class="text-center pt-10" id= "piepagina">
+	  <div class="text-center pt-10" style="background-color: rgba(0, 0, 0, 0.4);">
     Grupo 9 Equipo 2  
   </div>
-  <div class="text-center pt-10" id= "piepagina"> 
-    Carol Martínez - Claudia P. González - David Muñoz - Andrés F. Lozada © 2021 Copyright.
-  </div>
+	<nav class="navbar fixed-bottom navbar-dark bg-dark">
+		<div class="row justify-content-between">
+			<div class="col-4">
+				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
+					Diseñado y programado por Carol Martínez, Claudia González, David Muñoz, Andrés Lozada <i
+					class="fas fa-code-branch"></i></a>
+			</div>
+		</div>
+	</nav>
 	  <!-- Copyright -->
 	</footer>
 			<!--  
@@ -194,7 +205,7 @@
 			//funcion interna que compara la información
 			xmlhttp.onreadystatechange = function() {
 				//si se obtiene un 200 (Conexion correcta)
-				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 					//convirtiendo JSON en variable javascrip
 					var usuarios = JSON.parse(xmlhttp.responseText);
 					
@@ -209,15 +220,15 @@
 						console.log(usuarios[i].password);
 						
 						//si el nombre coincide
-						if (usuarios[i].usuario === x) {
+						if (usuarios[i].usuario == x) {
 							//si la clave coincide
-							if (usuarios[i].password === y) {
+							if (usuarios[i].password == y) {
 								console.log("si");
 								var element = document.getElementById("error");
 								element.classList.add("visually-hidden");
 								document.getElementById("inputuser").value = "";
 								document.getElementById("inputpass").value = "";
-								window.location.href = "index_2.jsp";
+								window.location.href = "index2.jsp";
 								return;
 							} else {
 								//si la clave NO coincide

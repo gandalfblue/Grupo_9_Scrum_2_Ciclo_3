@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Insertando producto</title>
 <!-- bootstrap-->
 <link
@@ -32,48 +32,78 @@
 </head>
 
 
-<body>
+<body id="body_productos">
 
-	<nav class="navbar" id ="titulo_2">
+	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand links" href="index.html">
 			<i class="fas fa-shopping-basket"></i> Tienda Generica</a>
-			<a class="navbar-brand links" href="listausuarios.jsp">
+			<a class="navbar-brand links" href="index_usuarios.jsp">
 			<i class="fas fa-users"></i> Usuarios</a> 
-			<a class="navbar-brand links" href="listaclientes.jsp">
+			<a class="navbar-brand links" href="index_clientes.jsp">
 			<i class="fas fa-address-book"></i> Clientes</a>
-			<a class="navbar-brand links" href="listaproveedores.jsp">
+			<a class="navbar-brand links" href="index_proveedores.jsp">
 			<i class="fas fa-truck"></i> Proveedores</a>
-			<a class="navbar-brand links" href="listaproductos.jsp">
+			<a class="navbar-brand links" href="index_productos.jsp">
 			<i class="fas fa-apple-alt"></i> Productos</a>
 			<a class="navbar-brand links" href="listaventas.jsp">
 			<i class="fas fa-money-check-alt"></i> Ventas</a>
-			<a class="navbar-brand links" href="listareportes.jsp">
+			<a class="navbar-brand links" href="reportes.jsp">
 			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>
-
+	
+			<div class="container p-4">
+				<div class="col text-center">
+					<button type="button" class="btn btn-success" 
+				  		onclick="window.location.href='/insertarproductos.jsp'">
+					<i class="fas fa-plus-circle"></i> Insertar productos</button>
+					<button type="button" class="btn btn-danger"
+						onclick="window.location.href='/eliminarproductos.jsp'">
+					<i class="fas fa-trash"></i> Eliminar productos</button>
+					<button type="button" class="btn btn-warning"
+						onclick="window.location.href='/actualizarproductos.jsp'">
+					<i class="fas fa-pen-alt"></i> Actualizar productos</button>
+					<button type="button" class="btn btn-secondary"
+						onclick="window.location.href='/buscarproductos.jsp'">
+					<i class="fas fa-search"></i> Buscar productos</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='/listaproductos.jsp'">
+					<i class="fas fa-list-ol"></i> Lista productos</button>
+					
+				</div>
+			</div>
+		<br>
+		<br>
+		<div class="header">
+				<h1 style="color:green;" >
+					<i class="fas fa-plus-circle"></i> Insertar producto
+				</h1>		
+			</div>
+			<br>			
+	
 	<div style="padding-left: 5px">
-		<h2>
-			<i class="fas fa-plus-circle"></i> Insertando archivo de productos
-		</h2>
 		<div class="container">
+		<br>
+		<br>
+		<br>
 
 
 			<div id="error" class="alert alert-danger visually-hidden"
-				role="alert">Archivo vacio, extensión no valida o datos corruptos (El separador debe ser coma ",")</div>
+				role="alert">Archivo vacio, extensiÃ³n no valida o datos corruptos (El separador debe ser coma ",")</div>
 
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert">Productos importados desde CSV con exito</div>
 
-			<form id="form1">
+			<form id="form1" class="preselection">
 				<div>
 					<label for="formFileLg" class="form-label">Seleccionar
 						archivo CSV con el inventario de productos</label> <input
 						class="form-control form-control-lg" id="archivo" type="file"
 						placeholder="Inserte el archivo aqui" accept=".csv,.txt">
+						<br>
 					<button type="button" class="btn btn-success"
-						onclick="subirArchivo()">Subir archivo</button>
+						onclick="subirArchivo()">Insertar producto</button>
 				</div>
 
 			</form>
@@ -82,39 +112,15 @@
 
 	</div>
 	
-			<h2>
-				<i class="fas fa-cogs"></i> Operaciones
-			</h2>
-			<div class="container">
-				<div class="row">
-					<button type="button" class="btn btn-danger"
-					onclick="window.location.href='/eliminarproductos.jsp'">
-						<i class="fas fa-trash"></i> Eliminar producto
-					</button>
-					<button type="button" class="btn btn-warning"
-					onclick="window.location.href='/actualizarproductos.jsp'">
-						<i class="fas fa-pen-alt"></i> Actualizar producto
-					</button>
-					<button type="button" class="btn btn-secondary"
-					onclick="window.location.href='/buscarproductos.jsp'">
-						<i class="fas fa-search"></i> Buscar un producto
-					</button>
-					<button type="button" class="btn btn-primary"
-					onclick="window.location.href='/listaproductos.jsp'">
-						<i class="fas fa-search"></i> Lista de productos
-					</button>
-				</div>
-
-			</div>
 			
-	<nav class="navbar2 fixed-bottom" id="titulo">
-			<div class="row justify-content-between">
-				<div class="col-4">
-					<a class="navbar-brand links" href="#"><i class="fab fa-battle-net"></i>
-					Diseñado y programado por Carol Martínez, Claudia González, David Muñoz, Andrés Lozada
-					<i class="fas fa-cogs"></i></a>
-				</div>
+<nav class="navbar fixed-bottom navbar-dark bg-dark">
+		<div class="row justify-content-between">
+			<div class="col-4">
+				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
+					Diseñado y programado por Carol Martínez, Claudia González, David Muñoz, Andrés Lozada <i
+					class="fas fa-code-branch"></i></a>
 			</div>
+		</div>
 	</nav>
 	
 	<script>

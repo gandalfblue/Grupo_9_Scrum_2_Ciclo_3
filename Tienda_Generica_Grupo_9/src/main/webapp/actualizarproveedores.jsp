@@ -32,38 +32,60 @@
 </head>
 
 
-<body>
+<body id="body_proveedores">
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i
-				class="fas fa-fish"></i>Tienda Generica</a>
+			<a class="navbar-brand links" href="index.html">
+			<i class="fas fa-shopping-basket"></i> Tienda Generica</a>
+			<a class="navbar-brand links" href="index_usuarios.jsp">
+			<i class="fas fa-users"></i> Usuarios</a> 
+			<a class="navbar-brand links" href="index_clientes.jsp">
+			<i class="fas fa-address-book"></i> Clientes</a>
+			<a class="navbar-brand links" href="index_proveedores.jsp">
+			<i class="fas fa-truck"></i> Proveedores</a>
+			<a class="navbar-brand links" href="index_productos.jsp">
+			<i class="fas fa-apple-alt"></i> Productos</a>
+			<a class="navbar-brand links" href="listaventas.jsp">
+			<i class="fas fa-money-check-alt"></i> Ventas</a>
+			<a class="navbar-brand links" href="reportes.jsp">
+			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>
-
-	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listaproductos.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listaventas.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listadereportes.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
-		</div>
-	</nav>
+	<br>
+	
+				<div class="container p-4">
+				<div class="col text-center">
+					<button type="button" class="btn btn-success" 
+				  		onclick="window.location.href='/insertarproveedores.jsp'">
+					<i class="fas fa-plus-circle"></i> Insertar proveedores</button>
+					<button type="button" class="btn btn-danger"
+						onclick="window.location.href='/eliminarproveedores.jsp'">
+					<i class="fas fa-trash"></i> Eliminar proveedores</button>
+					<button type="button" class="btn btn-warning"
+						onclick="window.location.href='/actualizarproveedores.jsp'">
+					<i class="fas fa-pen-alt"></i> Actualizar proveedores</button>
+					<button type="button" class="btn btn-secondary"
+						onclick="window.location.href='/buscarproveedores.jsp'">
+					<i class="fas fa-search"></i> Buscar proveedores</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='/listaproveedores.jsp'">
+					<i class="fas fa-list-ol"></i> Lista proveedores</button>
+					
+				</div>
+			</div>
+<br>
+			<div class="header">
+				<h1 style="color:black;" >
+					<i class="fas fa-pen-alt"></i> Actualizar proveedor
+				</h1>		
+			</div>
+		<br>	
+		
+	
 
 	<div style="padding-left: 5px">
-		<h1>
-			<i class="fas fa-sync"></i> Datos a actualizar del proveedor
-		</h1>
+		
 		<div class="container">
 
 
@@ -73,38 +95,38 @@
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert">proveedor actualizado con exito</div>
 
-			<form id="form1">
+			<form id="form1" class="preselection">
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Nit</span> <input
-						type="text" class="form-control"
+						type="text" class="form-control" 
 						placeholder="Inserte el nit aqui..."
 						aria-describedby="basic-addon1" required id="nit_proveedor">
 				</div>
 				
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon4">Ciudad</span> <input
-						type="text" class="form-control"
+						type="text" class="form-control" 
 						placeholder="Inserte la ciudad aqui..."
 						aria-describedby="basic-addon4" required id="ciudad_proveedor">
 				</div>
 
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon2">Direccion</span> <input
-						type="text" class="form-control"
+						type="text" class="form-control" 
 						placeholder="Inserte la direccion aqui..."
 						aria-describedby="basic-addon2" required id="direccion_proveedor">
 				</div>
 
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon3">Nombre completo</span>
-					<input type="text" class="form-control"
+					<input type="text" class="form-control" 
 						placeholder="Inserte el nombre aqui..."
 						aria-describedby="basic-addon3" required id="nombre_proveedor">
 				</div>				
 
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon5">Telefono</span> <input
-						type="text" class="form-control"
+						type="text" class="form-control" 
 						placeholder="Inserte el telefono aqui..."
 						aria-describedby="basic-addon5" required id="telefono_proveedor">
 				</div>
@@ -114,41 +136,22 @@
 				<i class="fas fa-edit"></i> Actualizar proveedor
 			</button>
 
-			<h1>
-				<i class="fas fa-cogs"></i> Operaciones
-			</h1>
-			<div class="container">
-				<div class="row">
-					<button type="button" class="btn btn-success"
-						onclick="window.location.href='/insertarproveedores.jsp'">
-						<i class="fas fa-plus-circle"></i> Agregar proveedor
-					</button>
-					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='/eliminarproveedores.jsp'">
-						<i class="fas fa-trash"></i> Eliminar proveedor
-					</button>
-					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/buscarproveedores.jsp'">
-						<i class="fas fa-search"></i> Buscar un proveedor
-					</button>
-					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/listaproveedores.jsp'">
-						<i class="fas fa-search"></i> Lista de proveedores
-					</button>
-				</div>
-			</div>
+			<br>
+			<br>
+			<br>
+			<br>
 		</div>
 
 	</div>
 	
-	<nav class="navbar2 fixed-bottom">
-			<div class="row justify-content-between">
-				<div class="col-4">
-					<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
+	<nav class="navbar fixed-bottom navbar-dark bg-dark">
+		<div class="row justify-content-between">
+			<div class="col-4">
+				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
 					Diseñado y programado por Carol Martínez, Claudia González, David Muñoz, Andrés Lozada <i
 					class="fas fa-code-branch"></i></a>
-				</div>
 			</div>
+		</div>
 	</nav>
 	
 	<script>

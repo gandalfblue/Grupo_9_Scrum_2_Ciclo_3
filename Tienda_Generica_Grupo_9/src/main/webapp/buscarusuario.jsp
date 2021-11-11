@@ -27,53 +27,65 @@
 <!-- Cargando mi hoja de estilo -->
 <link href="style.css" rel="stylesheet" type="text/css" />
 
-
-
 </head>
 
-
-<body>
-	<!-- Navbar-->
-	<nav class="navbar navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i
-				class="fas fa-fish"></i>Tienda Generica</a>
-		</div>
-	</nav>
+<body id="body_usuarios">
 
 	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand links" href="index.html">
+			<i class="fas fa-shopping-basket"></i> Tienda Generica</a>
+			<a class="navbar-brand links" href="index_usuarios.jsp">
+			<i class="fas fa-users"></i> Usuarios</a> 
+			<a class="navbar-brand links" href="index_clientes.jsp">
+			<i class="fas fa-address-book"></i> Clientes</a>
+			<a class="navbar-brand links" href="index_proveedores.jsp">
+			<i class="fas fa-truck"></i> Proveedores</a>
+			<a class="navbar-brand links" href="index_productos.jsp">
+			<i class="fas fa-apple-alt"></i> Productos</a>
+			<a class="navbar-brand links" href="listaventas.jsp">
+			<i class="fas fa-money-check-alt"></i> Ventas</a>
+			<a class="navbar-brand links" href="reportes.jsp">
+			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>
+	
+		<br>
+			<div class="container p-4">
+				<div class="col text-center">
+				  	<button type="button" class="btn btn-success" 
+				  		onclick="window.location.href='/insertarusuario.jsp'">
+					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
+					<button type="button" class="btn btn-danger"
+						onclick="window.location.href='/eliminarusuario.jsp'">
+					<i class="fas fa-trash"></i> Eliminar usuario</button>
+					<button type="button" class="btn btn-warning"
+						onclick="window.location.href='/actualizarusuario.jsp'">
+					<i class="fas fa-pen-alt"></i> Actualizar usuario</button>
+					<button type="button" class="btn btn-secondary"
+						onclick="window.location.href='/buscarusuario.jsp'">
+					<i class="fas fa-search"></i> Buscar usuario</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='/listausuarios.jsp'">
+					<i class="fas fa-search"></i> Lista de usuarios</button>				
+				</div>
+			</div>
+				<div class="header">
+					<h1 style="color:gray; "><i class="fas fa-search"></i> Buscar usuario</h1>
+				</div>
+				
+	<br>
 
 	<div style="padding-left: 5px">
-		<h2>
-			<i class="fas fa-search"></i> Buscando un usuario
-		</h2>
 		<div class="container">
-
-
 			<div id="error" class="alert alert-danger visually-hidden"
 				role="alert">Error al buscar el usuario, el usuario no existe</div>
 
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert">Usuario encontrado con exito</div>
 
-			<form id="form1">
+			<form id="form1" class="preselection">
 			
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon4">Usuario a buscar</span> <input
@@ -82,8 +94,7 @@
 						aria-describedby="basic-addon4" required id="usersearch" >
 				</div>
 				<br>
-				<br>
-				<br>
+
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Cedula</span> <input
 						type="text" class="form-control"
@@ -115,7 +126,7 @@
 				</div>
 			</form>
 
-			<button type="button" class="btn btn-primary" onclick="enviar()">
+			<button type="button" class="btn btn-secondary" onclick="enviar()">
 				<i class="fas fa-search"></i> Buscar usuario
 			</button>
 			
@@ -125,34 +136,11 @@
 			<br>
 			<br>
 
-			<h1>
-				<i class="fas fa-cogs"></i> Operaciones
-			</h1>
-			<div class="container">
-				<div class="row">
-					<button type="button" class="btn btn-success"
-						onclick="window.location.href='/insertarusuario.jsp'">
-						<i class="fas fa-plus-circle"></i> Agregar usuario
-					</button>
-					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='/eliminarusuario.jsp'">
-						<i class="fas fa-trash"></i> Eliminar usuario
-					</button>
-					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='/actualizarusuario.jsp'">
-						<i class="fas fa-pen-alt"></i> Actualizar usuario
-					</button>
-					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/listausuarios.jsp'">
-						<i class="fas fa-search"></i> Lista de usuarios
-					</button>
-				</div>
-			</div>
 		</div>
 
 	</div>
 	
-	<nav class="navbar2 fixed-bottom">
+	<nav class="navbar fixed-bottom navbar-dark bg-dark">
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>

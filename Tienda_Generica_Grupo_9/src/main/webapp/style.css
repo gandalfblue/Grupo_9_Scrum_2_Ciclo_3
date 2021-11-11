@@ -1,15 +1,131 @@
 
 #body_index{
-	background: url('https://cdn.pixabay.com/photo/2014/04/03/10/00/shopping-cart-309592_960_720.png');
-	background-size: contain;
+	background: url('carrito1.jpg');
+	background-size: 70%;
 	background-attachment: fixed;
 	background-color: whitesmoke;
+	background-position: center;
 }
+
+#body_usuarios{
+	background: url('Coffee shop-rafiki.png');
+	background-size: 45%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right bottom;
+}
+
+#body_clientes{
+	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg');
+	background-size: 70%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+
+#body_proveedores{
+	background: url('FreeShippingCuate.png');
+	background-size: 75%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+#body_productos{
+	background: url("https://image.freepik.com/free-vector/grocery-bags-set-plastic-paper-packages-supermarket-basket-with-food-packs-cans-bread-milk-products-flat-vector-illustrations-shopping-food-delivery-charity-concept_74855-10074.jpg");
+	background-size: 42%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+#body_ventas{
+	background: url('FreeShippingCuate.png');
+	background-size: 75%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+#body_reportes{
+	background: url('FreeShippingCuate.png');
+	background-size: 75%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+#corner_usuarios{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_clientes{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_provadores{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_productos{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 190px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_ventas{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_reportes{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
 
 body{
 	 font-family: Arial, Helvetica, sans-serif;
 	 margin: 0;	
-	 background: url('https://cdn.pixabay.com/photo/2018/04/22/12/03/world-3340864_960_720.jpg') no-repeat center center fixed; 
+}
+
+.bodyp{
+	 font-family: Arial, Helvetica, sans-serif;
+	 margin: 0;	
+	 background: url('FreeShippingCuate.png') no-repeat center center fixed; 
 	 background-size: cover;
 	 
 }
@@ -31,7 +147,7 @@ body{
 
 h1{
     text-align: center;
-    color: whitesmoke;
+    color: blue;
     font-size: 40px;
 }
 input[type="text"],
@@ -227,3 +343,16 @@ a:hover{
     font-size: 40px;
     font-family: fantasy;
 }
+
+#listaclientes  {
+ 	float: left; 
+}
+#listaproveedores  {
+ 	float: left; 
+}
+
+.preselection {
+  max-width: 45%;
+}
+
+.dataTables_filter, .dataTables_info { display: none; }

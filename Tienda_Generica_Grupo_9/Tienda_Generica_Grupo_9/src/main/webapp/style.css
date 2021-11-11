@@ -1,0 +1,361 @@
+
+#body_index{
+	background: url('carrito1.jpg');
+	background-size: 70%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-position: center;
+}
+
+#body_usuarios{
+	background: url('Coffee shop-rafiki.png');
+	background-size: 45%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right bottom;
+}
+
+#body_clientes{
+	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg');
+	background-size: 70%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+
+#body_proveedores{
+	background: url('FreeShippingCuate.png');
+	background-size: 75%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+#body_productos{
+	background: url("https://image.freepik.com/free-vector/grocery-bags-set-plastic-paper-packages-supermarket-basket-with-food-packs-cans-bread-milk-products-flat-vector-illustrations-shopping-food-delivery-charity-concept_74855-10074.jpg");
+	background-size: 42%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+#body_ventas{
+	background: url('FreeShippingCuate.png');
+	background-size: 75%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+#body_reportes{
+	background: url('FreeShippingCuate.png');
+	background-size: 75%;
+	background-attachment: fixed;
+	background-color: whitesmoke;
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+#corner_usuarios{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_clientes{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_provadores{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_productos{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 190px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_ventas{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+#corner_reportes{
+/* 	background: url('https://www.emprendedorinteligente.com/wp-content/uploads/2020/10/father-son-buying-food-supermarket_74855-52451.jpg'); */
+	float: left;
+	background-size: 40%;
+	height: 200px; 
+	alt: "Client logo";
+	background-repeat:no-repeat;
+}
+
+
+body{
+	 font-family: Arial, Helvetica, sans-serif;
+	 margin: 0;	
+}
+
+.bodyp{
+	 font-family: Arial, Helvetica, sans-serif;
+	 margin: 0;	
+	 background: url('FreeShippingCuate.png') no-repeat center center fixed; 
+	 background-size: cover;
+	 
+}
+
+* {
+    box-sizing: border-top;
+}
+
+.contenedor{
+    width: 100%;
+    padding: 10px;
+}
+
+.formulario{
+    background: #152F8F;
+    margin-top: 150px;
+    padding: 3px;
+}
+
+h1{
+    text-align: center;
+    color: blue;
+    font-size: 40px;
+}
+input[type="text"],
+input[type="password"]{
+    font-size: 20px;
+    width: 77%;
+    padding: 10px;
+    border: none;
+}
+.input-contenedor{
+    background: white;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+.button{
+    border: none;
+    width: 100%;
+    color: #0004ff;
+    font-size: 20px;
+    background:  #ffe600;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background:#0D8505;
+}
+
+.sinborde{
+  outline: none;
+  border: 0
+}
+
+p{
+    text-align: center;
+    color: white;
+}
+.link{
+    text-decoration: none;
+      color: white;
+    font-weight: 600;
+}
+.link:hover{
+     color: rgb(252, 6, 6);
+}
+
+@media(min-width:768px)
+{
+    .formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 50px;
+        border-radius: 10%;
+    }
+}
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+#icono1{
+min-width: 50px;
+text-align: center;
+color:blue;
+}
+
+#icono2{
+min-width: 50px;
+text-align: center;
+color:blue;
+}
+
+#facebook{
+  background-color: #3b5998;
+}
+
+#facebook:hover{
+  background-color: whitesmoke;
+  color: #3b5998;
+  border-color: gainsboro
+}
+
+#twitter{
+  background-color: #55acee;
+}
+
+#twitter:hover{
+  background-color: whitesmoke;
+  color: #55acee;
+  border-color: gainsboro
+}
+
+#google{
+  background-color: #dd4b39;
+}
+
+#google:hover{
+  background-color: whitesmoke;
+  color: #dd4b39;
+  border-color: gainsboro
+}
+
+#instagram{
+  background-color: #ac2bac;
+}
+
+#instagram:hover{
+  background-color: whitesmoke;
+  color: #ac2bac;
+  border-color: gainsboro
+}
+
+#linkedin{
+  background-color: #0082ca;
+}
+
+#linkedin:hover{
+  background-color: whitesmoke;
+  color: #0082ca;
+  border-color: gainsboro
+}
+
+#github{
+  background-color: #333333;
+}
+
+#github:hover{
+  background-color: whitesmoke;
+  color: #333333;
+  border-color: gainsboro
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  color: white;
+}
+
+.tablax{
+	background-color: white;
+}
+
+#tabla{
+	background-color: rgba(222, 246, 247,0.4);
+	color: black;
+	text-align: center;
+}
+
+#tabla:hover{
+	background-color: rgba(149, 240, 246,0.4);
+	color: black;
+	text-align: center;
+}
+
+h2{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    font-family: fantasy;
+}
+
+#titulo{
+	background-color: rgba(255, 255, 255, 0.4)
+}
+
+#titulo:hover{
+	background-color: rgba(151, 246, 239, 0.4)
+}
+
+a{
+	color: darkgreen;
+}
+
+a:hover{
+	color: black;
+}
+
+#piepagina{
+	background-color: rgba(0, 0, 0, 0.4)
+}
+
+#titulo_2{
+	background-color: rgba(222, 246, 247,0.4);
+	color: rgba(6, 125, 10)
+}
+
+#titulo_3{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    font-family: fantasy;
+}
+
+#listaclientes  {
+ 	float: left; 
+}
+#listaproveedores  {
+ 	float: left; 
+}
+
+.preselection {
+  max-width: 45%;
+}
+
+span {
+  display: inline-block;
+  width: 35%;
+}

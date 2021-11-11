@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Eliminar cliente</title>
 <!-- bootstrap-->
 <link
@@ -27,44 +27,65 @@
 <!-- Cargando mi hoja de estilo -->
 <link href="style.css" rel="stylesheet" type="text/css" />
 
-
-
 </head>
 
 
-<body>
+
+<body id="body_clientes">
+
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand links" href="index.html">
 			<i class="fas fa-shopping-basket"></i> Tienda Generica</a>
+			<a class="navbar-brand links" href="index_usuarios.jsp">
+			<i class="fas fa-users"></i> Usuarios</a> 
+			<a class="navbar-brand links" href="index_clientes.jsp">
+			<i class="fas fa-address-book"></i> Clientes</a>
+			<a class="navbar-brand links" href="index_proveedores.jsp">
+			<i class="fas fa-truck"></i> Proveedores</a>
+			<a class="navbar-brand links" href="index_productos.jsp">
+			<i class="fas fa-apple-alt"></i> Productos</a>
+			<a class="navbar-brand links" href="listaventas.jsp">
+			<i class="fas fa-money-check-alt"></i> Ventas</a>
+			<a class="navbar-brand links" href="reportes.jsp">
+			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>
 
-	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
-		</div>
-	</nav>
+	
+			<div class="container p-4">
+				<div class="col text-center">
+					<button type="button" class="btn btn-success" 
+				  		onclick="window.location.href='/insertarclientes.jsp'">
+					<i class="fas fa-plus-circle"></i> Agregar cliente</button>
+					<button type="button" class="btn btn-danger"
+						onclick="window.location.href='/eliminarclientes.jsp'">
+					<i class="fas fa-trash"></i> Eliminar cliente</button>
+					<button type="button" class="btn btn-warning"
+						onclick="window.location.href='/actualizarclientes.jsp'">
+					<i class="fas fa-pen-alt"></i> Actualizar cliente</button>
+					<button type="button" class="btn btn-secondary"
+						onclick="window.location.href='/buscarclientes.jsp'">
+					<i class="fas fa-search"></i> Buscar un cliente</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='/listaclientes.jsp'">
+					<i class="fas fa-search"></i> Lista de clientes</button>
+					
+				</div>
+			</div>
+		<div class="header">	
+			<h1 style="color:red;">
+			<i class="fas fa-trash"></i> Eliminar cliente
+		</h1>
 
-	<div style="padding-left: 5px">
-		<h2>
-			<i class="fas fa-plus-circle"></i> Cedula del cliente a eliminar
-		</h2>
-		
+
+
+		</div>
+		<br>
+		<br>
+
+	<div style="padding-left: 5px">	
 		<div class="container">		
 		
 			<div id="error" class="alert alert-danger visually-hidden"
@@ -77,7 +98,7 @@
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert">Cliente Eliminado con exito</div>
 
-			<form id="form1">
+			<form id="form1" class="preselection">
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Cedula del cliente</span>
 					 <input type="text" class="form-control"
@@ -87,55 +108,15 @@
 
 			</form>
 
-			<div class="container p-4">
-				<div class="col text-center">
-					
-					<button type="button" class="btn btn-success" onclick="buscar()">
-						<i class="fas fa-check"></i> Buscar cliente
-					</button>
+
 		 			<button type="button" class="btn btn-danger" onclick="eliminar()">
-						<i class="fas fa-check"></i> Eliminar cliente
+						<i class="fas fa-trash"></i> Eliminar cliente
 					</button>
-	 			</div>
-			</div>
-			
-			<div id="table" class="contenedor visually-hidden">
-					
-			<h2><i class="fas fa-list-ol"></i> Datos del cliente a eliminar</h2>
-			<div class="container">
-				<div class="row">
-					<!--  Aqui es donde se autogenera la tabla basado en el script -->
-					<div class="col align-self-center" id="clienteinfo">
-					
-					</div>
-	
-				</div>
-			</div>
-		</div>
-			
-			<h2>
-				<i class="fas fa-cogs"></i> Operaciones
-				
-			</h2>
-			
-			<div class="container">
-				<div class="row">
-					<button type="button" class="btn btn-success" 
-				  		onclick="window.location.href='/insertarclientes.jsp'">
-					<i class="fas fa-plus-circle"></i> Agregar cliente</button>
-					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='/actualizarclientes.jsp'">
-					<i class="fas fa-pen-alt"></i> Actualizar cliente</button>
-					<button type="button" class="btn btn-dark"
-						onclick="window.location.href='/buscarclientes.jsp'">
-					<i class="fas fa-search"></i> Buscar un cliente</button>
-					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/listaclientes.jsp'">
-					<i class="fas fa-search"></i> Lista de clientes</button>
-				</div>
 
 			</div>
 		</div>
+
+		
 
 	</div>
 	<nav class="navbar fixed-bottom navbar-dark bg-dark">
@@ -149,60 +130,6 @@
 	</nav>
 	
 	<script>	
-	
-	function buscar() {
-		
-		var req = new XMLHttpRequest();
-		var coincidencia = false;
-		var cedula_cliente=   document.getElementById("clientesearch").value;
-		req.open('GET', 'http://localhost:8080/consultarclientes?cedula_cliente='+cedula_cliente, false);
-		req.send(null);
-		var cliente = null;
-			
-			if (req.readyState == 4 && req.status == 200) {
-				clientes = JSON.parse(xmlhttp.responseText);
-				console.log(JSON.parse(req.responseText));
-				var main = "";
-				for (i = 0; i < clientes.length; i++) {
-					
-					console.log(clientes[i].cedula_cliente);					
-					
-					if (clientes[i].cedula_cliente ==cedula_cliente ) {
-						console.log("si");
-						var tbltop = "<table class='table  table-dark table-striped'><tr><th>Cédula</th><th>Dirección</th><th>Email</th><th>Nombre</th><th>Teléfono</th></tr>";
-						var element = document.getElementById("tabla");
-						element.classList.remove("visually-hidden");
-						console.log(clientes[i].cedula_cliente +" "+cedula_cliente);	
-					
-						main = "<tr><td>" + clientes[i].cedula_cliente
-							 + "</td><td>" + clientes[i].direccion_cliente
-							 + "</td><td>" + clientes[i].email_cliente
-							 + "</td><td>" + clientes[i].nombre_cliente
-							 + "</td><td>" + clientes[i].telefono_cliente + "</td></tr>";
-					break;
-					
-					} else {
-						console.log("cliente no encontrado");
-						var element = document.getElementById("no_encontrado");
-						element.classList.remove("visually-hidden");
-						document.getElementById("clientesearch").value = "";
-						return;			
-				}
-				
-				var tblbottom = "</table>";
-				var tbl = tbltop + main + tblbottom;
-				document.getElementById("clienteinfo").innerHTML = tbl;
-			}
-				console.log("no encontrado");
-				var element = document.getElementById("no_encontrado");
-				element.classList.remove("visually-hidden");
-				document.getElementById("clientesearch").value = "";
-				return;
-		} else{
-			console.log("error al comunicar con la base de datos");
-		};
-		req.send();
-	}
 	
 	function eliminar() {
 		var y = document.getElementById("clientesearch").value;

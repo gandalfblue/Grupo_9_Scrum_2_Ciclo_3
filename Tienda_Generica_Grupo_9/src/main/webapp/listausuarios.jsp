@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Lista de usuarios</title>
 <!-- bootstrap-->
 <link
@@ -27,67 +27,84 @@
 <!-- Cargando mi hoja de estilo -->
 <link href="style.css" rel="stylesheet" type="text/css" />
 
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+	rel="stylesheet" />
 
 <script>
-	var baseurl = "http://localhost:8080/listarusuarios";
-	function loadusuarios() {
+
+	window.addEventListener('DOMContentLoaded', event => {
+    // Simple-DataTables
+    // https://github.com/fiduswriter/Simple-DataTables/wiki
+	let table=null;
+    if (datatablesusers) {
+        table=new simpleDatatables.DataTable("#datatablesusers", {
+            searchable: true,
+            labels: {
+                placeholder: "Buscar...",
+                perPage: "{select} registros por pagina",
+                noRows: "No hay registros",
+                info: "Mostrando {start} a {end} de {rows} registros",
+            }, 
+            
+        });
+        
+    }
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseurl, true);
+		xmlhttp.open("GET", "http://localhost:8080/listarusuarios", true);
 		xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
 				var usuarios = JSON.parse(xmlhttp.responseText);
-				var tbltop = "<table class='table table-hover' id='tabla'><tr><th>Cedula</th><th>Email</th><th>Nombre</th><th>Password</th><th>Usuario</th></tr>";
-				var main = "";
+
 				for (i = 0; i < usuarios.length; i++) {
-					main += "<tr><td>" + usuarios[i].cedula_usuario
-							+ "</td><td>" + usuarios[i].email_usuario
-							+ "</td><td>" + usuarios[i].nombre_usuario
-							+ "</td><td>" + usuarios[i].password 
-							+ "</td><td>" + usuarios[i].usuario + "</td></tr>";
+					let fila = [
+						usuarios[i].cedula_usuario.toString(), 
+						usuarios[i].email_usuario, 
+						usuarios[i].nombre_usuario, 
+						usuarios[i].password, 
+						usuarios[i].usuario
+					];
+
+				    table.rows().add(fila);
 				}
-				var tblbottom = "</table>";
-				var tbl = tbltop + main + tblbottom;
-				document.getElementById("usuariosinfo").innerHTML = tbl;
 			}
 		};
+		
 		xmlhttp.send();
-	}
-	window.onload = function() {
-		loadusuarios();
-	}
+});
 </script>
-
 </head>
-
 
 <body>
 	
 	<!-- Navbar-->	
-   	<nav class="navbar" id ="titulo_2">
+   	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand links" href="index.html">
 			<i class="fas fa-shopping-basket"></i> Tienda Generica</a>
-			<a class="navbar-brand links" href="listausuarios.jsp">
+			<a class="navbar-brand links" href="index_usuarios.jsp">
 			<i class="fas fa-users"></i> Usuarios</a> 
-			<a class="navbar-brand links" href="listaclientes.jsp">
+			<a class="navbar-brand links" href="index_clientes.jsp">
 			<i class="fas fa-address-book"></i> Clientes</a>
-			<a class="navbar-brand links" href="listaproveedores.jsp">
+			<a class="navbar-brand links" href="index_proveedores.jsp">
 			<i class="fas fa-truck"></i> Proveedores</a>
-			<a class="navbar-brand links" href="listaproductos.jsp">
+			<a class="navbar-brand links" href="index_productos.jsp">
 			<i class="fas fa-apple-alt"></i> Productos</a>
 			<a class="navbar-brand links" href="listaventas.jsp">
 			<i class="fas fa-money-check-alt"></i> Ventas</a>
-			<a class="navbar-brand links" href="listareportes.jsp">
+			<a class="navbar-brand links" href="reportes.jsp">
 			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>	
 	
-	<!-- contenido  -->		
-			<div class="container p-4">
+	<div class="container p-4">
 				<div class="col text-center">
+				<img src="Coffee shop-rafiki.png" id="corner_usuarios">
+				
 				  	<button type="button" class="btn btn-success" 
 				  		onclick="window.location.href='/insertarusuario.jsp'">
-					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
+					<i class="fas fa-plus-circle"></i> Insertar usuario</button>
 					<button type="button" class="btn btn-danger"
 						onclick="window.location.href='/eliminarusuario.jsp'">
 					<i class="fas fa-trash"></i> Eliminar usuario</button>
@@ -97,29 +114,68 @@
 					<button type="button" class="btn btn-secondary"
 						onclick="window.location.href='/buscarusuario.jsp'">
 					<i class="fas fa-search"></i> Buscar un usuario</button>
-									
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='/listausuarios.jsp'">
+					<i class="fas fa-list-ol"></i> Lista de usuarios</button>				
 				</div>
 			</div>
-  
-		<h2><i class="fas fa-stream"></i> Lista de usuarios</h2>
-			<div class="container">
-				<div class="table-wrapper-scroll-y my-custom-scrollbar">
-					<div class="row">
-						<!--  Aqui es donde se autogenera la tabla basado en el script -->
-						<div class="col align-self-center " id="usuariosinfo">					
-						</div>	
-					</div>	
-				</div>		
-			</div>
+
+	<br>
+	<br>
 	
-	<nav class="navbar2 fixed-bottom" id="titulo">
-			<div class="row justify-content-between">
-				<div class="col-4">
-					<a class="navbar-brand links" href="#"><i class="fab fa-battle-net"></i>
-					Diseñado y programado por Carol Martínez, Claudia González, David Muñoz, Andrés Lozada
-					<i class="fas fa-cogs"></i></a>
-				</div>
+		<div class="header">
+			<h1 style="color:blue; "><i class="fas fa-list-ol fa-1x"></i> Lista de usuarios</h1>
+		</div>
+	<br>
+	<br>
+		<div class="row justify-content-center">
+					<div class="col-xl-8">
+						<div class="card m-4">
+							<div class="card-header text-white bg-dark">
+								<i class="fas fa-table"></i> Lista de usuarios
+							</div>
+							<div class="card-body">
+								<table id="datatablesusers" data-page-length='5'>
+									<thead>
+										<tr>
+											<th>Cedula</th>
+											<th>Email</th>
+											<th>Nombre</th>
+											<th>Password</th>
+											<th>Usuario</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+											<th>Cedula</th>
+											<th>Email</th>
+											<th>Nombre</th>
+											<th>Password</th>
+											<th>Usuario</th>
+										</tr>
+									</tfoot>
+									<tbody id="usuariosinfo">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
 			</div>
-		</nav>
+	</div>
+	<nav class="navbar fixed-bottom navbar-dark bg-dark">
+		<div class="row justify-content-between">
+			<div class="col-4">
+				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
+					Diseñado y programado por Carol Martínez, Claudia González, David Muñoz, Andrés Lozada <i
+					class="fas fa-code-branch"></i></a>
+			</div>
+		</div>
+	</nav>
+		
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
+crossorigin="anonymous"></script>
+
 </body>
 </html>
